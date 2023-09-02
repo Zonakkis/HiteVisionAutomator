@@ -1,0 +1,37 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="750" d:DesignHeight="200"
+			 xmlns:vm="using:Automator.ViewModels"
+             x:Class="Automator.Views.InitView"
+			 x:DataType="vm:InitViewModel"
+			 Height="200" Width="750"
+			 FontSize="16">
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="auto"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="auto"/>
+			<RowDefinition Height="auto"/>
+			<RowDefinition Height="auto"/>
+			<RowDefinition Height="auto"/>
+		</Grid.RowDefinitions>
+		<Label Grid.Row="0" Grid.Column="0" Margin="10">检测到首次运行,请设置路径：</Label>
+		<StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal" Margin="10,0">
+			<Label>展台路径：</Label>
+			<Label Name="CameraPath" Content="{Binding Setting.CameraPath,Mode=TwoWay}"/>
+		</StackPanel>
+		<Button Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" Margin="10,-3" Click="SelectCameraPath">选择</Button>
+		<StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal" Margin="10,15">
+			<Label>白板路径：</Label>
+			<Label Name="TouchPath" Content="{Binding Setting.CameraPath,Mode=TwoWay}" HorizontalAlignment="Left"/>
+		</StackPanel>
+		<Button Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" Margin="10,11" Click="SelectTouchPath">选择</Button>
+
+		<Button Grid.Row="3" Grid.Column="0" HorizontalAlignment="Left" Margin="325,10,0,0">确定</Button>
+
+	</Grid>
+</UserControl>

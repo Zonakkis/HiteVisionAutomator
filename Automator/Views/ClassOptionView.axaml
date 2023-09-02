@@ -1,0 +1,34 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:vm="using:Automator.ViewModels"
+			 mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="400"
+             x:Class="Automator.Views.ClassOptionView"
+			 x:DataType="vm:ClassOptionViewModel">
+
+	
+	<Grid VerticalAlignment="Top" Margin="50,50">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="100"></ColumnDefinition>
+			<ColumnDefinition Width="200"></ColumnDefinition>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="200"></RowDefinition>
+		</Grid.RowDefinitions>
+
+		<StackPanel Grid.Column="0">
+			<Button Background="BlueViolet" Foreground="Blue" Focusable="False">星期一</Button>
+			<Button>星期二</Button>
+			<Button>星期三</Button>
+			<Button>星期四</Button>
+			<Button>星期五</Button>
+			<Button>星期六</Button>
+		</StackPanel>
+		<DataGrid ItemsSource="{Binding ClassOptions}" Grid.Column="1">
+			<DataGrid.Columns>
+				<DataGridTextColumn Header="课" Binding="{Binding Name}"/>
+			</DataGrid.Columns>
+		</DataGrid>
+	</Grid>
+</UserControl>
