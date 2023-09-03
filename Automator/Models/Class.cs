@@ -10,5 +10,7 @@ namespace Automator.Models
     {
         public string Name { get; set; } = String.Empty;
         public bool OpenCamera { get; set; }
+        public bool OpenTouch { get; set; }
+
     }
 }

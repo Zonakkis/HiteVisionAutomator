@@ -7,8 +7,7 @@ namespace Automator.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
-        public string Greeting => "Welcome to Avalonia!";
-        
+
         private ViewModelBase _contentViewModel;
         
         public MainWindowViewModel()
@@ -16,7 +15,7 @@ namespace Automator.ViewModels
             var service = new AutoMatorService();
             ClassOption = new ClassOptionViewModel(service.GetClasses());
             Debug.WriteLine(System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase);
-            if (!Directory.Exists($"{System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase}Settings.json"))
+            if (!File.Exists($"{System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase}Settings.json"))
             {
                 _contentViewModel = new InitViewModel();
             }

@@ -27,11 +27,11 @@
 		<Button Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" Margin="10,-3" Click="SelectCameraPath">选择</Button>
 		<StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal" Margin="10,15">
 			<Label>白板路径：</Label>
-			<Label Name="TouchPath" Content="{Binding Setting.CameraPath,Mode=TwoWay}" HorizontalAlignment="Left"/>
+			<Label Name="TouchPath" Content="{Binding Setting.TouchPath,Mode=TwoWay}" HorizontalAlignment="Left"/>
 		</StackPanel>
 		<Button Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" Margin="10,11" Click="SelectTouchPath">选择</Button>
 
-		<Button Grid.Row="3" Grid.Column="0" HorizontalAlignment="Left" Margin="325,10,0,0">确定</Button>
+		<Button Grid.Row="3" Grid.Column="0" HorizontalAlignment="Left" Margin="325,10,0,0" Click="Enter">确定</Button>
 
 	</Grid>
 </UserControl>
