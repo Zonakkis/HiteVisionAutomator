@@ -13,9 +13,9 @@ namespace Automator.ViewModels
         public MainWindowViewModel()
         {
             var service = new AutoMatorService();
-            ClassOption = new ClassOptionViewModel(service.GetClasses());
+            ClassOption = new MainViewModel();
             Debug.WriteLine(System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase);
-            if (!File.Exists($"{System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase}Settings.json"))
+            if (!File.Exists($"{System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase}/config/Settings.json"))
             {
                 _contentViewModel = new InitViewModel();
             }
@@ -25,7 +25,7 @@ namespace Automator.ViewModels
             }
         }
 
-        public ClassOptionViewModel ClassOption { get; }
+        public MainViewModel ClassOption { get; }
 
         public ViewModelBase ContentViewModel
         {

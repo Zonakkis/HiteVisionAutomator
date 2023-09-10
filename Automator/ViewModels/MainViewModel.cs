@@ -1,4 +1,6 @@
 ﻿using Automator.Models;
+using Automator.Services;
+using Automator.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -8,13 +10,17 @@ using System.Threading.Tasks;
 
 namespace Automator.ViewModels
 {
-    public class ClassOptionViewModel :ViewModelBase
+    public class MainViewModel :ViewModelBase
     {
-        public ClassOptionViewModel(IEnumerable<Class> items)
+        public MainViewModel()
         {
-            ClassOptions = new ObservableCollection<Class>(items);
+            var service = new AutoMatorService();
+            ClassView = new ClassViewModel(service.GetClasses());
+
         }
 
+
+        public ClassViewModel ClassView { get; }
         public ObservableCollection<Class> ClassOptions { get; }
     }
 }

@@ -76,7 +76,7 @@ namespace Automator.Views
                 await box.ShowAsync();
                 return;
             }
-            Storage.Save(System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase, "Settings.json", ((InitViewModel)DataContext).Setting);
+            ((InitViewModel)DataContext).Setting.Save();
             Process p = new Process();
             p.StartInfo.FileName = $"{System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase + Process.GetCurrentProcess().ProcessName}.exe";
             p.StartInfo.UseShellExecute = false;

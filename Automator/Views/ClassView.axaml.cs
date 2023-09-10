@@ -1,10 +1,12 @@
+using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Markup.Xaml;
 
 namespace Automator.Views
 {
-    public partial class ClassOptionView : UserControl
+    public partial class ClassView : UserControl
     {
-        public ClassOptionView()
+        public ClassView()
         {
             InitializeComponent();
         }
