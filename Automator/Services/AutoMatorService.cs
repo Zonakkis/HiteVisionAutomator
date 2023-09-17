@@ -1,4 +1,5 @@
 ﻿using Automator.Models;
+using Avalonia.Controls;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,19 +12,42 @@ namespace Automator.Services
 {
     public class AutoMatorService
     {
-        public IEnumerable<List<Class>[]> GetClasses()
+        public IEnumerable<List<Class>> GetClasses()
         {
-            if (File.Exists(Path.Combine($"{AppDomain.CurrentDomain.SetupInformation.ApplicationBase}/config", "Settings.json")))
+            if (File.Exists(Path.Combine($"{AppDomain.CurrentDomain.SetupInformation.ApplicationBase}/config", "Classes.json")))
             {
-                return Storage.Load<List<Class>[][]>($"{AppDomain.CurrentDomain.SetupInformation.ApplicationBase}/config", "Settings.json");
+                return Storage.Load<List<Class>[]>($"{AppDomain.CurrentDomain.SetupInformation.ApplicationBase}/config", "Classes.json");
             }
             else
             {
-
-                return new List<Class>[][]
+            List<Class>[] classes;
+            classes = new List<Class>[]
+                                {
+                    new List<Class>(),new List<Class>(9),new List<Class>(9),new List<Class>(9),new List<Class>(9),new List<Class>(9),new List<Class>(9)
+                                };
+                foreach(var c in classes)
                 {
-                    new List<Class>[7]
-                };
+                    c.Add(new Class());
+                    c.Add(new Class());
+                    c.Add(new Class());
+                    c.Add(new Class());
+                    c.Add(new Class());
+                    c.Add(new Class());
+                    c.Add(new Class());
+                    c.Add(new Class());
+                    c.Add(new Class());
+                }
+            return classes;
+
+
+
+            //return new List<Class>[]
+                //{
+                //    new List<Class>(9),new List<Class>(9),new List<Class>(9),new List<Class>(9),new List<Class>(9),new List<Class>(9),new List<Class>(9)
+                //};
+
+
+
             }
         }
     }

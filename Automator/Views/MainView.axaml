@@ -5,28 +5,26 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
 			 xmlns:vm="using:Automator.ViewModels"
              x:Class="Automator.Views.MainView"
-			 x:DataType="vm:MainViewModel">
+			 x:DataType="vm:MainViewModel"
+			 
+			 >
 	<Grid VerticalAlignment="Top" Margin="50,50">
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="100"></ColumnDefinition>
-			<ColumnDefinition Width="200"></ColumnDefinition>
+			<ColumnDefinition Width="*"></ColumnDefinition>
 		</Grid.ColumnDefinitions>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="200"></RowDefinition>
 		</Grid.RowDefinitions>
 
 		<StackPanel Grid.Column="0">
-			<Button Background="BlueViolet" Foreground="Blue" Focusable="False">星期一</Button>
+			<Button Background="Cyan">星期一</Button>
 			<Button>星期二</Button>
 			<Button>星期三</Button>
 			<Button>星期四</Button>
 			<Button>星期五</Button>
 			<Button>星期六</Button>
 		</StackPanel>
-		<DataGrid ItemsSource="{Binding ClassOptions}" Grid.Column="1">
-			<DataGrid.Columns>
-				<DataGridTextColumn Header="课" Binding="{Binding Name}"/>
-			</DataGrid.Columns>
-		</DataGrid>
+		<ContentControl Content="{Binding ClassView}" Grid.Column="1" />
 	</Grid>
 </UserControl>

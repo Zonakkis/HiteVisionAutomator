@@ -5,6 +5,7 @@ using Avalonia.Controls;
 using Avalonia.Dialogs;
 using Avalonia.Interactivity;
 using Avalonia.Platform.Storage;
+using Tmds.DBus.Protocol;
 
 
 namespace Automator.Views
@@ -14,6 +15,11 @@ namespace Automator.Views
         public MainView()
         {
             InitializeComponent();
+        }
+
+        public void Monday(object sender, RoutedEventArgs args)
+        {
+
         }
     }
 }

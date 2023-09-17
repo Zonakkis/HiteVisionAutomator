@@ -12,5 +12,4 @@
 		Content="{Binding ContentViewModel}"
 	    WindowStartupLocation="CenterScreen"
 		SizeToContent="WidthAndHeight">
-
 </Window>

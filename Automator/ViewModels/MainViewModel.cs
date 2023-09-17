@@ -21,6 +21,7 @@ namespace Automator.ViewModels
 
 
         public ClassViewModel ClassView { get; }
+
         public ObservableCollection<Class> ClassOptions { get; }
     }
 }

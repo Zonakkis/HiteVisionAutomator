@@ -3,9 +3,25 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			 xmlns:model="using:Automator.Models"
 			 xmlns:vm="using:Automator.ViewModels"
              x:Class="Automator.Views.ClassView"
 			 x:DataType="vm:ClassViewModel"
 			 >
-  Welcome to Avalonia!
+	<DataGrid ItemsSource="{Binding ClassesofADay[0]}" Focusable="False">
+		<DataGrid.Columns>
+
+			<DataGridTemplateColumn>
+				<DataGridTemplateColumn.CellTemplate >
+					<DataTemplate DataType="model:Class">
+						<CheckBox IsChecked="{Binding Enabled}" HorizontalAlignment="Center" Focusable="False"/>
+					</DataTemplate>
+				</DataGridTemplateColumn.CellTemplate>
+			</DataGridTemplateColumn>
+			<DataGridTextColumn Header="课" Binding="{Binding Name}"/>
+			<DataGridTextColumn Header="打开展台" Binding="{Binding OpenCamera}"/>
+			<DataGridTextColumn Header="打开白板" Binding="{Binding OpenTouch}"/>
+			
+		</DataGrid.Columns>
+	</DataGrid>
 </UserControl>
