@@ -6,7 +6,6 @@
 			 xmlns:vm="using:Automator.ViewModels"
              x:Class="Automator.Views.MainView"
 			 x:DataType="vm:MainViewModel"
-			 
 			 >
 	<Grid VerticalAlignment="Top" Margin="50,50">
 		<Grid.ColumnDefinitions>
@@ -18,13 +17,14 @@
 		</Grid.RowDefinitions>
 
 		<StackPanel Grid.Column="0">
-			<Button Background="Cyan">星期一</Button>
-			<Button>星期二</Button>
-			<Button>星期三</Button>
-			<Button>星期四</Button>
-			<Button>星期五</Button>
-			<Button>星期六</Button>
+			<Button Background="Cyan" Click="Monday" Name="MondayButton">星期一</Button>
+			<Button Click="Tuesday" Name="TuesdayButton">星期二</Button>
+			<Button Click="Wednesday" Name="WednesdayButton">星期三</Button>
+			<Button Click="Thursday" Name="ThursdayButton">星期四</Button>
+			<Button Click="Friday" Name="FridayButton">星期五</Button>
+			<Button Click="Saturday" Name="SaturdayButton">星期六</Button>
 		</StackPanel>
-		<ContentControl Content="{Binding ClassView}" Grid.Column="1" />
+		<ContentControl Content="{Binding ClassView}" Grid.Column="1" Name="ClassView"  DataContextChanged="ClassViewDataContextChanged"  />
+		
 	</Grid>
 </UserControl>

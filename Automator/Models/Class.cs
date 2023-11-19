@@ -10,10 +10,13 @@ namespace Automator.Models
     {
         public Class()
         {
-            Name = "class";
+            Name = "英语";
         }
         public bool Enabled { get; set; }
         public string Name { get; set; } = String.Empty;
+
+        public int Index { get; set; }
+
         public bool OpenCamera { get; set; }
         public bool OpenTouch { get; set; }
 
